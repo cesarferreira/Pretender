@@ -1,4 +1,4 @@
-package github.cesarferreira.pretender;
+package github.cesarferreira.pretender.utils;
 
 
 public enum Nationality {
