@@ -1,24 +1,26 @@
 package github.cesarferreira.pretender.models;
 
 
-import java.util.List;
-
 public class FakeUser {
-    Results results;
-
-    private class Results {
-        List<User> user;
-
-        private class User {
-            String gender;
-            Name name;
-
-            private class Name {
-                String title;
-                String first;
-                String last;
-            }
-        }
+    public FakeUser() {
     }
-}
 
+    public String gender;
+    public FakeName name;
+    public String email;
+    public String username;
+    public String password;
+    public String salt;
+    public String md5;
+    public String sha1;
+    public String sha256;
+    public String registered;
+    public String dob;
+    public String phone;
+    public String cell;
+    public String PPS;
+    public String nationality;
+    public FakeLocation location;
+    public FakePicture picture;
+
+}

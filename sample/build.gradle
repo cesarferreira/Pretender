@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "github.cesarferreira.sample"
-        minSdkVersion 10
+        minSdkVersion 14
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -19,8 +19,22 @@ android {
     }
 }
 
+
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
     compile project(':pretender')
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:recyclerview-v7:22.2.0'
+    compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    compile 'com.cesarferreira.colorize:library:0.2.1'
+
+    compile 'com.github.castorflex.smoothprogressbar:library-circular:1.1.0'
 }

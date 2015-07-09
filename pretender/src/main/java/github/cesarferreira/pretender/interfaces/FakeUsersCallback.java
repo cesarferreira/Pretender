@@ -9,5 +9,5 @@ import github.cesarferreira.pretender.models.FakeUser;
  */
 public interface FakeUsersCallback {
     void onSuccess(List<FakeUser> fakeUsers);
-    void onError();
+    void onError(Throwable exceptions);
 }

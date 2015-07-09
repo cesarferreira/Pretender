@@ -1,8 +1,27 @@
 apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda'
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // REST related
+    compile 'com.squareup.retrofit:retrofit:1.9.+'
+    compile 'io.reactivex:rxjava:1.0.+'
+    compile 'io.reactivex:rxandroid:0.24.+'
+    compile 'com.squareup.okhttp:okhttp:2.4.+'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.+'
+}
+
 
 android {
     compileSdkVersion 22
     buildToolsVersion "23.0.0 rc2"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
     defaultConfig {
         minSdkVersion 10
@@ -18,8 +37,6 @@ android {
     }
 }
 
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.koushikdutta.ion:ion:2.1.6'
+retrolambda {
+    javaVersion JavaVersion.VERSION_1_7
 }
