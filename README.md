@@ -3,9 +3,9 @@
 
 A Library for generating random user data. Like Lorem Ipsum, but for people.
 </p>
-<!--<p align="center">
+<p align="center">
 <img src="https://raw.github.com/cesarferreira/Pretender/master/extras/images/logo.png?raw=true" width="100%" />
-</p>-->
+</p>
 
 ## Usage
 
