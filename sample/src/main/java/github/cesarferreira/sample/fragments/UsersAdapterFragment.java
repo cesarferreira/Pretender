@@ -22,19 +22,13 @@ import github.cesarferreira.pretender.utils.Nationality;
 import github.cesarferreira.sample.R;
 import github.cesarferreira.sample.adapters.UsersAdapter;
 
-
-/**
- * A placeholder fragment containing a simple view.
- */
 public class UsersAdapterFragment extends Fragment {
 
     @InjectView(R.id.my_recycler_view)
     RecyclerView mRecyclerView;
+
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-
-//    @InjectView(R.id.download_progress_view)
-//    DownloadProgressBar downloadProgressBar;
 
     @InjectView(R.id.progress_view_container)
     LinearLayout progressContainer;
