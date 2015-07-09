@@ -6,11 +6,11 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     // REST related
-    compile 'com.squareup.retrofit:retrofit:1.9.+'
-    compile 'io.reactivex:rxjava:1.0.+'
-    compile 'io.reactivex:rxandroid:0.24.+'
-    compile 'com.squareup.okhttp:okhttp:2.4.+'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.+'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'io.reactivex:rxjava:1.0.12'
+    compile 'io.reactivex:rxandroid:0.24.0'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.4.0'
 }
 
 
