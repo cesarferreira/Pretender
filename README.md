@@ -71,22 +71,10 @@ Pretender.with(context)
 
 ## Install
 
-**Step 1:** Add the JitPack repository to your main `build.gradle`
-
-
-```groovy
-repositories {
-    maven {
-        url "https://jitpack.io"
-    }
-}
-```
-
-
-**Step 2:** Add the dependency in the form
+Add the dependency in the form:
 ```groovy
 dependencies {
-    compile 'com.github.cesarferreira:pretender:0.1.0'
+  compile 'com.cesarferreira.pretender:pretender:0.1.0'
 }
 ```
 
