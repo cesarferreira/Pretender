@@ -27,9 +27,6 @@ public class UsersAdapterFragment extends Fragment {
     @InjectView(R.id.my_recycler_view)
     RecyclerView mRecyclerView;
 
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-
     @InjectView(R.id.progress_view_container)
     LinearLayout progressContainer;
 
@@ -46,7 +43,7 @@ public class UsersAdapterFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -54,39 +51,35 @@ public class UsersAdapterFragment extends Fragment {
 
         fetchData();
 
-
         return view;
     }
 
 
     private void fetchData() {
 
-        //  fetch
-        FakeUsersCallback callback = new FakeUsersCallback() {
-            @Override
-            public void onSuccess(List<FakeUser> fakeUsers) {
-                hideProgress();
-                fillAdapter(fakeUsers);
-            }
-
-            @Override
-            public void onError(Throwable exception) {
-                hideProgress();
-                exception.printStackTrace();
-            }
-        };
-
         showProgress();
 
         Pretender.with(getActivity())
                 .amount(30)
-                .nationality(Nationality.US)
+                .nationality(Nationality.NL)
                 .gender(Gender.FEMALE)
-                .fetch(callback);
+                .fetch(new FakeUsersCallback() {
+                    @Override
+                    public void onSuccess(List<FakeUser> fakeUsers) {
+                        hideProgress();
+                        fillAdapter(fakeUsers);
+                    }
+
+                    @Override
+                    public void onError(Throwable exception) {
+                        hideProgress();
+                        exception.printStackTrace();
+                    }
+                });
     }
 
     private void fillAdapter(List<FakeUser> data) {
-        mAdapter = new UsersAdapter(data, R.layout.layout_users_item);
+        RecyclerView.Adapter mAdapter = new UsersAdapter(data, R.layout.layout_users_item);
         mRecyclerView.setAdapter(mAdapter);
     }
 
@@ -94,10 +87,8 @@ public class UsersAdapterFragment extends Fragment {
         progressContainer.setVisibility(View.INVISIBLE);
     }
 
-
     private void showProgress() {
         progressContainer.setVisibility(View.VISIBLE);
     }
-
 
 }

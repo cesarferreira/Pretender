@@ -40,7 +40,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
         holder.titleTextView.setText(item.name.first + " " + item.name.last);
         holder.subtitleTextView.setText(item.email);
 
-        setupImage(holder.imageView, item.picture.thumbnail);
+        setupImage(holder.imageView, item.picture.medium);
 
         holder.itemView.setTag(item);
     }
